@@ -8,5 +8,5 @@ cd ../back-end-api
 yarn
 cd ../development
 
-docker-compose --project-directory .. up
-docker-compose --project-directory .. down
+docker-compose --project-directory .. -f docker-compose.yml up
+docker-compose --project-directory .. -f docker-compose.yml down
