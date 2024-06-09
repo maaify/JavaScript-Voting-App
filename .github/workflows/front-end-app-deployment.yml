@@ -1,0 +1,45 @@
+# # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# # More GitHub Actions for Azure: https://github.com/Azure/actions
+
+# name: Deploy to Azure App Services
+
+# on:
+#   push:
+#     branches:
+#       - master
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     env:
+#       AZURE_WEBAPP_PACKAGE_PATH: .
+#       AZURE_WEBAPP_NAME: javascript-framework-ratings-front-end
+#       WORKING_PATH: /src/front-end-app
+#       APP_PATH: $(WORKING_PATH)Maa.Vacations.WebApi/app
+#       SLOT_NAME: 'production'
+
+#     steps:
+#       - uses: actions/checkout@v2
+
+#       - name: Set up .NET Core
+#         uses: actions/setup-dotnet@v3
+#         with:
+#           dotnet-version: '8.0.x'
+#           include-prerelease: false
+
+#       - name: Build
+#         working-directory: ${{env.WORKING_PATH}}
+#         run: dotnet build --configuration Release
+
+#       - name: Publish
+#         working-directory: ${{env.WORKING_PATH}}
+#         run: dotnet publish --no-restore -c Release -o ${{env.AZURE_WEBAPP_PACKAGE_PATH}}/app
+
+#       - name: Deployment
+#         uses: azure/webapps-deploy@v2
+#         with:
+#           app-name: ${{env.AZURE_WEBAPP_NAME}}
+#           slot-name: ${{env.SLOT_NAME}}
+#           publish-profile: ${{secrets.AZURE_APP_SERVICES_WEB_APP}}
+#           package: ${{env.APP_PATH}}

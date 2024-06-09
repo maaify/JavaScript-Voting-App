@@ -1,8 +1,0 @@
-kind: ConfigMap
-apiVersion: v1
-metadata:
-  name: back-end-api-configmap
-  namespace: staging
-data:
-  PORT: '8080'
-  LISTEN_ON: '0.0.0.0'

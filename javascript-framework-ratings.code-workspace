@@ -1,17 +1,27 @@
 {
   "folders": [
     {
-      "path": "front-end-app"
+      "path": "src/front-end-app"
     },
     {
-      "path": "back-end-api"
+      "path": "src/back-end-api"
     },
     {
       "path": "development"
     },
     {
       "path": "deployment"
+    },
+    {
+      "path": ".github/"
+    },
+    {
+    "path": "./"
     }
   ],
-  "settings": {}
+  "settings": {
+    "files.exclude": {
+      "**/node_modules": true
+    }
+  }
 }

@@ -1,8 +1,0 @@
-FROM nginx:1.15.8-alpine
-LABEL maintainer="Michael Astrauckas"
-RUN rm -frv usr/share/nginx/html; \
-    rm -frv /etc/nginx/conf.d/*;
-
-COPY ./nginx/front-end-app.conf /etc/nginx/conf.d/
-COPY ./build /usr/share/nginx/static-files
-EXPOSE 8080
