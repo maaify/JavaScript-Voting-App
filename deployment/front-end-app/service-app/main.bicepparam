@@ -38,7 +38,7 @@ param appServicePlan = {
   name: appServicePlanName
   region: primaryRegion
   reserved: true
-  oneRedundant: false
+  zoneRedundant: false
   kind: 'linux'
   sku: {
     name: 'F1'

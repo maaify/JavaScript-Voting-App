@@ -33,7 +33,7 @@ module ApplicationInishgtsDeployment './modules/application-insights.bicep' = {
 
 module AppServicePlanDeployment './modules/app-service-plan.bicep' = {
   name: 'app-service-plan-deployment'
-  scope: resourceGroup(appServicePlanResourceGroupRegion)
+  scope: resourceGroup(appServicePlanResourceGroupName)
   params: {
     tags: tags
     appServicePlan: appServicePlan
@@ -48,7 +48,7 @@ module AppServiceDeployment './modules/app-service.bicep' = {
   name: 'app-service-deployment'
   params: {
     tags: tags
-    appServiePlanName: appServicePlan.name
+    appServicePlanId: AppServicePlanDeployment.outputs.appServicePlanId
     appService: appService
     applicationInsights: applicationInsights.name
   }
